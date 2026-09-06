@@ -47,7 +47,7 @@ If QBitTorrent HomeConnect saves you time, voluntary support for ongoing develop
 
 PayPal: https://paypal.me/MrHC1983
 
-Buy Me a Coffee
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20Development-FFDD00?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/MrHC1983)
 
 ## Privacy
 
