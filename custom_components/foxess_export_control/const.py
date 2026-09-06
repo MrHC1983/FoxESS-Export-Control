@@ -1,0 +1,10 @@
+DOMAIN="foxess_export_control"
+CONF_API_KEY="api_key"
+CONF_DEVICE_SN="device_sn"
+API_BASE="https://www.foxesscloud.com"
+SETTING_GET="/op/v0/device/setting/get"
+SETTING_SET="/op/v0/device/setting/set"
+SETTING_KEY="ExportLimit"
+MIN_EXPORT_LIMIT=0
+MAX_EXPORT_LIMIT=14500
+EXPORT_STEP=100

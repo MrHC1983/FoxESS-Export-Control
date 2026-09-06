@@ -1,0 +1,1 @@
+{"domain":"foxess_export_control","name":"FoxESS Export Control","codeowners":["@MrHC1983"],"config_flow":true,"documentation":"https://github.com/MrHC1983/FoxESS-Export-Control","iot_class":"cloud_polling","issue_tracker":"https://github.com/MrHC1983/FoxESS-Export-Control/issues","requirements":[],"version":"0.1.0"}

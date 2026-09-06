@@ -1,0 +1,51 @@
+alias: FoxESS Export Control - Negative Feed-In
+triggers:
+  - trigger: state
+    entity_id: sensor.electricity_feed_in_price
+  - trigger: time_pattern
+    minutes: "/5"
+  - trigger: homeassistant
+    event: start
+conditions:
+  - condition: template
+    value_template: "{{ states('sensor.electricity_feed_in_price') not in ['unknown','unavailable','none'] }}"
+actions:
+  - choose:
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.electricity_feed_in_price
+            below: 0
+          - condition: template
+            value_template: "{{ 7 <= now().hour < 18 and now().weekday() < 5 }}"
+        sequence:
+          - condition: template
+            value_template: "{{ states('number.foxess_export_limit') | float(0) != 500 }}"
+          - action: number.set_value
+            target:
+              entity_id: number.foxess_export_limit
+            data:
+              value: 500
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.electricity_feed_in_price
+            below: 0
+          - condition: template
+            value_template: "{{ 7 <= now().hour < 18 and now().weekday() >= 5 }}"
+        sequence:
+          - condition: template
+            value_template: "{{ states('number.foxess_export_limit') | float(0) != 2000 }}"
+          - action: number.set_value
+            target:
+              entity_id: number.foxess_export_limit
+            data:
+              value: 2000
+  default:
+    # Replace 14500 with your approved maximum export limit.
+    - condition: template
+      value_template: "{{ states('number.foxess_export_limit') | float(0) != 14500 }}"
+    - action: number.set_value
+      target:
+        entity_id: number.foxess_export_limit
+      data:
+        value: 14500
+mode: single
