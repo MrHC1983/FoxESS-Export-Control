@@ -42,6 +42,13 @@ This project is intended to reduce/manage export. It must not be used to defeat 
 
 If you have a dynamic export connection, that control path remains authoritative.
 
+Support development
+If QBitTorrent HomeConnect saves you time, voluntary support for ongoing development and maintenance is welcome:
+
+PayPal: https://paypal.me/MrHC1983
+
+Buy Me a Coffee
+
 ## Privacy
 
 No developer telemetry, analytics or remote data collection. The integration communicates with Home Assistant and FoxESS Cloud only. See `PRIVACY.md`.
